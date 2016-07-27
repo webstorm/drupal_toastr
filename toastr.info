@@ -1,0 +1,5 @@
+name = Toastr
+description = Show growl like messages using javascript
+core = 6.x
+version = 0.1
+package = Wow Inc.

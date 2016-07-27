@@ -1,0 +1,17 @@
+<?php
+
+function toastr_init() {
+  $module_path = drupal_get_path('module','toastr');
+  $toastr_lib_path = $module_path.'/lib/';
+  drupal_add_css($toastr_lib_path.'/toastr.min.css');
+  drupal_add_js($toastr_lib_path.'/toastr.min.js');
+  drupal_add_js(drupal_get_path('module', 'toastr').'/drupal_toastr.js', 'module','footer');
+}
+
+function toastr_theme_registry_alter(&$theme_registry) {
+  $theme_registry['status_messages']['function'] = 'toastr_status_messages';
+}
+
+function toastr_status_messages($display = NULL) {
+  drupal_add_js(array('messages' => drupal_get_messages()), 'setting');
+}
