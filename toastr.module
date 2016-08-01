@@ -5,7 +5,7 @@ function toastr_init() {
   $toastr_lib_path = $module_path.'/lib/';
   drupal_add_css($toastr_lib_path.'/toastr.min.css');
   drupal_add_js($toastr_lib_path.'/toastr.min.js');
-  drupal_add_js(drupal_get_path('module', 'toastr').'/drupal_toastr.js', 'module','footer');
+  drupal_add_js($module_path.'/drupal_toastr.js', 'module','footer');
 }
 
 function toastr_theme_registry_alter(&$theme_registry) {

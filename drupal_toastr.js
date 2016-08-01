@@ -20,6 +20,7 @@
     };
 
     var messages_store = Drupal.settings.messages;
+    
     for(var type in messages_store) {
       var messages = messages_store[type];
       messages.forEach(function(message) {
